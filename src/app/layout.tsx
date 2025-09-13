@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Givisiez - Engenharia e Inovação",
-  description: "Engenharia que transforma, inovação que evolui",
+  title: 'Givisiez - Engenharia e Inovação',
+  description: 'Engenharia que transforma, inovação que evolui',
 };
 
 export default function RootLayout({
@@ -13,10 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
