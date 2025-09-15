@@ -20,6 +20,12 @@ export default function Header() {
         >
           Projetos
         </Link>
+        <Link
+          href="/mentoria-jdm"
+          className="hover:text-blue-600 transition-colors"
+        >
+          Mentoria JDM
+        </Link>
         <Link href="/contato" className="hover:text-blue-600 transition-colors">
           Contato
         </Link>

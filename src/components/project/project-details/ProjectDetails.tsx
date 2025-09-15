@@ -19,6 +19,8 @@ export const ProjectDetails = ({
     <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold py-4">{title}</h1>
       <span className="text-gray-500">{subtitle}</span>
+      <h2 className="text-2xl font-bold">Visão geral</h2>
+      <p>{generalDescription}</p>
       <span>Empresa: {company}</span>
       <span>Tipo: {type.join(', ')}</span>
       <span>
@@ -38,8 +40,6 @@ export const ProjectDetails = ({
         ))}
       </div>
       <span>Ano: {year}</span>
-      <h2 className="text-2xl font-bold">Visão geral</h2>
-      <p>{generalDescription}</p>
       {challenges && (
         <>
           <h2 className="text-2xl font-bold">Desafios</h2>
