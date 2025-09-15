@@ -4,10 +4,13 @@ export interface ProjectProps {
   title: string;
   slug: string;
   company: string;
-  description: string;
+  subtitle: string;
+  generalDescription: string;
+  challenges?: string;
+  solutions?: string;
+  results?: string;
   cover: ImageProjectProps;
-  images: ImageProjectProps[];
-  link: string;
+  link?: string;
   type: string[];
   technologies: string[];
   year: number;

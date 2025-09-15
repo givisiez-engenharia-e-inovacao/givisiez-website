@@ -2,15 +2,10 @@ import Image from 'next/image';
 import { ProjectProps } from '../data.props';
 import Link from 'next/link';
 
-export const ProjectCard = ({
-  title,
-  cover,
-  description,
-  slug,
-}: ProjectProps) => {
+export const ProjectCard = ({ title, cover, subtitle, slug }: ProjectProps) => {
   return (
     <Link href={`/projetos/${slug}`}>
-      <div className="flex flex-col gap-4 rounded-md border-2 border-gray-300 w-full max-w-[300px] h-[350px] p-4">
+      <div className="flex flex-col gap-4 rounded-md w-full max-w-[300px] h-[350px] p-4 shadow-md bg-white">
         <div className="flex flex-row justify-center w-full h-[200px] overflow-hidden">
           {cover.src ? (
             <Image
@@ -31,7 +26,7 @@ export const ProjectCard = ({
           )}
         </div>
         <h1 className="text-lg font-bold">{title}</h1>
-        <span className="text-gray-500">{description}</span>
+        <span className="text-gray-500">{subtitle}</span>
       </div>
     </Link>
   );

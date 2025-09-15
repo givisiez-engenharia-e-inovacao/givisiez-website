@@ -4,28 +4,32 @@ import { ProjectProps } from '../data.props';
 export const ProjectDetails = ({
   title,
   cover,
-  images,
   link,
   technologies,
   year,
   company,
   type,
-  description,
+  subtitle,
+  generalDescription,
+  challenges,
+  solutions,
+  results,
 }: ProjectProps) => {
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto">
-      <h1>{title}</h1>
-      <div className="flex flex-row justify-center w-full overflow-hidden">
-        <Image src={cover.src} alt={cover.alt} width={500} height={300} />
-      </div>
-      <span>Descrição: {description}</span>
+      <h1 className="text-4xl font-bold py-4">{title}</h1>
+      <span className="text-gray-500">{subtitle}</span>
       <span>Empresa: {company}</span>
       <span>Tipo: {type.join(', ')}</span>
       <span>
         Link:{' '}
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          {link}
-        </a>
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {link}
+          </a>
+        ) : (
+          'Sem link disponível, projeto privado'
+        )}
       </span>
       <div>
         <span>Tecnologias: </span>
@@ -34,22 +38,33 @@ export const ProjectDetails = ({
         ))}
       </div>
       <span>Ano: {year}</span>
-      <h2>Imagens</h2>
-      {images.length > 0 ? (
-        <div className="flex flex-row gap-4 flex-wrap">
-          {images.map((image, index) => (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              key={index}
-              width={300}
-              height={300}
-              className="w-full h-full max-w-[400px] max-h-[400px] object-contain"
-            />
-          ))}
-        </div>
-      ) : (
-        <span>Nenhuma imagem encontrada</span>
+      <h2 className="text-2xl font-bold">Visão geral</h2>
+      <p>{generalDescription}</p>
+      {challenges && (
+        <>
+          <h2 className="text-2xl font-bold">Desafios</h2>
+          <p>{challenges}</p>
+        </>
+      )}
+      {solutions && (
+        <>
+          <h2 className="text-2xl font-bold">Soluções</h2>
+          <p>{solutions}</p>
+        </>
+      )}
+      <div className="flex flex-row justify-center w-full overflow-hidden">
+        <Image
+          src={cover.src ? cover.src : '/images/Image-not-found.jpg'}
+          alt={cover.alt}
+          width={500}
+          height={300}
+        />
+      </div>
+      {results && (
+        <>
+          <h2 className="text-2xl font-bold">Resultados</h2>
+          <p>{results}</p>
+        </>
       )}
     </div>
   );

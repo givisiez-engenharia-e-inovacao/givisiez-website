@@ -8,7 +8,7 @@ export default function Projects() {
     <>
       <Header />
       <div className="w-full max-w-7xl mx-auto">
-        <h1>Projetos</h1>
+        <h1 className="text-4xl font-bold py-4">Projetos</h1>
         <ProjectList projects={projectsContent} />
       </div>
       <Footer />
