@@ -10,6 +10,7 @@ export interface ProjectProps {
   solutions?: string;
   results?: string;
   cover: ImageProjectProps;
+  images?: ImageProjectProps[];
   link?: string;
   type: string[];
   technologies: string[];

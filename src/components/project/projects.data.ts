@@ -39,8 +39,8 @@ export const projectsContent = [
     results:
       'Desenvolver um aplicativo web e mobile para conectar profissionais de saúde com pais de crianças especiais',
     cover: {
-      src: '',
-      alt: '',
+      src: '/images/projects/CK-Logo.png',
+      alt: 'ConectaKids App logo',
     },
     link: '',
     type: ['web', 'mobile'],
@@ -66,8 +66,8 @@ export const projectsContent = [
     results:
       'Desenvolver um aplicativo mobile para grupos e listas de presentes',
     cover: {
-      src: '',
-      alt: '',
+      src: '/images/projects/PC-Login.jpeg',
+      alt: 'Presente Certo App Login page',
     },
     link: '',
     type: ['mobile'],

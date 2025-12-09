@@ -1,8 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ProjectProps } from '../data.props';
+import { privacyPolicyData } from '../privacy-policy/privacyPolicy.data';
 
 export const ProjectDetails = ({
   title,
+  slug,
   cover,
   link,
   technologies,
@@ -14,7 +17,11 @@ export const ProjectDetails = ({
   challenges,
   solutions,
   results,
+  images,
 }: ProjectProps) => {
+  const hasPrivacyPolicy = privacyPolicyData.some(
+    policy => policy.title === title
+  );
   return (
     <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold py-4">{title}</h1>
@@ -60,10 +67,34 @@ export const ProjectDetails = ({
           height={300}
         />
       </div>
+      {images && (
+        <div className="flex flex-row justify-center w-full overflow-hidden">
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              width={500}
+              height={300}
+            />
+          ))}
+        </div>
+      )}
       {results && (
         <>
           <h2 className="text-2xl font-bold">Resultados</h2>
           <p>{results}</p>
+        </>
+      )}
+      {hasPrivacyPolicy && (
+        <>
+          <h2 className="text-2xl font-bold">Política de privacidade</h2>
+          <Link
+            href={`/projetos/${slug}/politica-de-privacidade`}
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Ver política de privacidade completa
+          </Link>
         </>
       )}
     </div>
