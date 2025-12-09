@@ -2,7 +2,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import Link from 'next/link';
 import { ProjectList } from '@/components/project/project-list/ProjectList';
-import { projectsContent } from '@/components/project/data';
+import { projectsContent } from '@/components/project/projects.data';
 import Image from 'next/image';
 
 export default function Home() {
@@ -38,6 +38,12 @@ export default function Home() {
             <Image
               src="/images/clients/edvisor-newlogo.svg"
               alt="Cliente Edvisor"
+              width={100}
+              height={100}
+            />
+            <Image
+              src="/images/clients/sensakids-logo.jpeg"
+              alt="Cliente SensaKids"
               width={100}
               height={100}
             />

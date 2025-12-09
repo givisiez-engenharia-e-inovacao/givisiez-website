@@ -2,7 +2,7 @@
 
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import { projectsContent } from '@/components/project/data';
+import { projectsContent } from '@/components/project/projects.data';
 import ProjectDetails from '@/components/project/project-details';
 import { useParams } from 'next/navigation';
 

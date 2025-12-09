@@ -1,5 +1,5 @@
 import ProjectList from '@/components/project/project-list';
-import { projectsContent } from '../../components/project/data';
+import { projectsContent } from '../../components/project/projects.data';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
