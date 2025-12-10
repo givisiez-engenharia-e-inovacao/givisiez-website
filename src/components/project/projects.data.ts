@@ -81,8 +81,8 @@ export const projectsContent = [
     year: 2025,
   },
   {
-    title: 'AlergyTrack App',
-    slug: 'alergy-track-app',
+    title: 'AllergyTrack App',
+    slug: 'allergy-track-app',
     company: 'Cliente Privado',
     subtitle: 'Aplicativo web e mobile para gestão de alergia',
     generalDescription: 'Aplicativo web e mobile para gestão de alergia',
@@ -91,7 +91,7 @@ export const projectsContent = [
     results: 'Desenvolver um aplicativo web e mobile para gestão de alergia',
     cover: {
       src: '/images/projects/ATM-Web-Register.png',
-      alt: 'AlergyTrack App Login page',
+      alt: 'AllergyTrack App Login page',
     },
     link: '',
     type: ['web', 'mobile'],
