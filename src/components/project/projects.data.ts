@@ -70,6 +70,7 @@ export const projectsContent = [
       alt: 'Presente Certo App Login page',
     },
     link: '',
+    deleteAccountUrl: '/presente-certo/delete-user',
     type: ['mobile'],
     technologies: [
       'React Native',

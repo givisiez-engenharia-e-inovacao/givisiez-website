@@ -12,6 +12,7 @@ export interface ProjectProps {
   cover: ImageProjectProps;
   images?: ImageProjectProps[];
   link?: string;
+  deleteAccountUrl?: string;
   type: string[];
   technologies: string[];
   year: number;

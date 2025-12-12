@@ -18,6 +18,7 @@ export const ProjectDetails = ({
   solutions,
   results,
   images,
+  deleteAccountUrl,
 }: ProjectProps) => {
   const hasPrivacyPolicy = privacyPolicyData.some(
     policy => policy.title === title
@@ -40,6 +41,16 @@ export const ProjectDetails = ({
           'Sem link disponível, projeto privado'
         )}
       </span>
+      {deleteAccountUrl && (
+        <div>
+          <Link
+            href={deleteAccountUrl}
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Excluir Conta
+          </Link>
+        </div>
+      )}
       <div>
         <span>Tecnologias: </span>
         {technologies.map((technology, index) => (
