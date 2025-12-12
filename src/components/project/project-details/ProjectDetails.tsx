@@ -41,62 +41,6 @@ export const ProjectDetails = ({
           'Sem link disponível, projeto privado'
         )}
       </span>
-      {deleteAccountUrl && (
-        <div>
-          <Link
-            href={deleteAccountUrl}
-            className="text-blue-600 hover:text-blue-800 underline"
-          >
-            Excluir Conta
-          </Link>
-        </div>
-      )}
-      <div>
-        <span>Tecnologias: </span>
-        {technologies.map((technology, index) => (
-          <span key={index}>#{technology} </span>
-        ))}
-      </div>
-      <span>Ano: {year}</span>
-      {challenges && (
-        <>
-          <h2 className="text-2xl font-bold">Desafios</h2>
-          <p>{challenges}</p>
-        </>
-      )}
-      {solutions && (
-        <>
-          <h2 className="text-2xl font-bold">Soluções</h2>
-          <p>{solutions}</p>
-        </>
-      )}
-      <div className="flex flex-row justify-center w-full overflow-hidden">
-        <Image
-          src={cover.src ? cover.src : '/images/Image-not-found.jpg'}
-          alt={cover.alt}
-          width={500}
-          height={300}
-        />
-      </div>
-      {images && (
-        <div className="flex flex-row justify-center w-full overflow-hidden">
-          {images.map((image, index) => (
-            <Image
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              width={500}
-              height={300}
-            />
-          ))}
-        </div>
-      )}
-      {results && (
-        <>
-          <h2 className="text-2xl font-bold">Resultados</h2>
-          <p>{results}</p>
-        </>
-      )}
       {hasPrivacyPolicy && (
         <>
           <h2 className="text-2xl font-bold">Política de privacidade</h2>
@@ -107,6 +51,16 @@ export const ProjectDetails = ({
             Ver política de privacidade completa
           </Link>
         </>
+      )}
+      {deleteAccountUrl && (
+        <div>
+          <Link
+            href={deleteAccountUrl}
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Excluir Conta
+          </Link>
+        </div>
       )}
     </div>
   );
