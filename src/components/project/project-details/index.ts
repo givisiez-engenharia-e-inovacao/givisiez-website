@@ -1,3 +1,5 @@
 import { ProjectDetails } from './ProjectDetails';
+import CaseStudyDetails from './CaseStudyDetails';
 
-export default ProjectDetails;
+export { ProjectDetails, CaseStudyDetails };
+export default CaseStudyDetails;

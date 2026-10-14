@@ -58,7 +58,7 @@ export default function DeleteUserPage() {
               autoComplete="email"
               required
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
               className="w-full px-3 py-2 mt-1 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
@@ -71,12 +71,8 @@ export default function DeleteUserPage() {
             </button>
           </div>
         </form>
-        {message && (
-          <p className="text-center text-green-600">{message}</p>
-        )}
-        {error && (
-          <p className="text-center text-red-600">{error}</p>
-        )}
+        {message && <p className="text-center text-green-600">{message}</p>}
+        {error && <p className="text-center text-red-600">{error}</p>}
       </div>
     </main>
   );

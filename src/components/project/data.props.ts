@@ -15,7 +15,7 @@ export interface ProjectProps {
   deleteAccountUrl?: string;
   type: string[];
   technologies: string[];
-  year: number;
+  year: number | string;
 }
 
 export interface ImageProjectProps {

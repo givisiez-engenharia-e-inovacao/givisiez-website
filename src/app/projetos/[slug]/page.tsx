@@ -1,23 +1,52 @@
-'use client';
-
-import Footer from '@/components/footer';
 import Header from '@/components/header';
-import { projectsContent } from '@/components/project/projects.data';
-import ProjectDetails from '@/components/project/project-details';
-import { useParams } from 'next/navigation';
+import Footer from '@/components/footer';
+import CaseStudyDetails from '@/components/project/project-details/CaseStudyDetails';
+import { getCaseStudyBySlug, caseStudiesList } from '@/data/caseStudies';
+import { Metadata } from 'next';
 
-export default function ProjectDetail() {
-  const { slug } = useParams();
-  const project = projectsContent.find(project => project.slug === slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const caseStudy = getCaseStudyBySlug(slug);
 
-  if (!project) {
-    return <div>Project not found</div>;
+  if (!caseStudy) {
+    return {
+      title: 'Estudo de Caso | Givisiez - Engenharia e Inovação',
+    };
   }
+
+  return {
+    title: `Estudo de Caso | ${caseStudy.breadcrumbTitle} - Givisiez`,
+    description: caseStudy.subtitle,
+    openGraph: {
+      title: `${caseStudy.title} | Givisiez`,
+      description: caseStudy.subtitle,
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return caseStudiesList.flatMap(c => [
+    { slug: c.slug },
+    ...(c.aliasSlugs ? c.aliasSlugs.map(s => ({ slug: s })) : []),
+  ]);
+}
+
+export default async function ProjectDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const caseStudy = getCaseStudyBySlug(slug) || caseStudiesList[0];
 
   return (
     <>
       <Header />
-      <ProjectDetails {...project} />
+      <CaseStudyDetails caseStudy={caseStudy} />
       <Footer />
     </>
   );
